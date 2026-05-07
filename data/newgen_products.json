@@ -1,0 +1,280 @@
+[
+  {
+    "product_name": "NewgenONE Platform",
+    "category": "Core Platform",
+    "type": "AI-first Decision Intelligence Platform",
+    "description": "NewgenONE is a unified enterprise platform that integrates content, process, communication, data science, and AI agents into a single low-code ecosystem. It enables organizations to move beyond traditional automation and adopt decision intelligence, where AI actively participates in business decisions. The platform orchestrates workflows across systems, people, and data, embedding AI into every layer to create intelligent, adaptive, and autonomous enterprise operations.",
+    "key_capabilities": [
+      "Unified orchestration of content, process, communication, and AI",
+      "Low-code application development",
+      "AI-driven decision automation",
+      "End-to-end business workflow integration",
+      "Real-time analytics and monitoring"
+    ],
+    "features": [
+      "Integrated AI agents",
+      "Microservices architecture",
+      "Enterprise-grade scalability",
+      "Cross-module integration",
+      "Decision intelligence framework"
+    ],
+    "use_cases": [
+      "Loan processing automation",
+      "Insurance claim handling",
+      "Enterprise digital transformation",
+      "Government workflow automation"
+    ],
+    "keywords": ["AI Platform", "Low Code", "Decision Intelligence", "Automation"],
+    "source_url": "https://newgensoft.com/platform/",
+    "summary": "Central platform that powers all Newgen products and enables intelligent enterprise automation."
+  },
+  {
+    "product_name": "OmniDocs",
+    "category": "Content Intelligence",
+    "type": "Enterprise Content Management (ECM)",
+    "description": "OmniDocs is a contextual content services platform that manages the entire lifecycle of enterprise content, from capture and storage to archival and compliance. It transforms static documents into intelligent knowledge assets by integrating AI for classification, search, and summarization. The platform connects content directly with business processes, enabling faster decision-making and improved operational efficiency.",
+    "key_capabilities": [
+      "Document lifecycle management",
+      "AI-based document classification",
+      "Contextual search and retrieval",
+      "Compliance and governance",
+      "Content-process integration"
+    ],
+    "features": [
+      "NLP-based search",
+      "Document summarization",
+      "Auto-tagging and metadata extraction",
+      "Secure access control",
+      "Audit trails"
+    ],
+    "use_cases": [
+      "Document management in banking",
+      "Records management for compliance",
+      "Enterprise knowledge repositories",
+      "Legal document handling"
+    ],
+    "keywords": ["ECM", "Content Management", "Document AI"],
+    "source_url": "https://newgensoft.com/platform/document-management/",
+    "summary": "Central repository for managing enterprise content with AI-driven intelligence."
+  },
+  {
+    "product_name": "iBPS",
+    "category": "Process Intelligence",
+    "type": "Business Process Management & Low-Code Platform",
+    "description": "iBPS is the core process automation engine of NewgenONE that enables organizations to design, automate, and optimize business workflows. It combines low-code development with AI-driven decision-making, allowing enterprises to build applications rapidly and adapt processes dynamically. The platform integrates human tasks, RPA bots, and AI systems into a unified workflow orchestration engine.",
+    "key_capabilities": [
+      "Workflow automation",
+      "Low-code app development",
+      "Decision management",
+      "Case management",
+      "Process analytics"
+    ],
+    "features": [
+      "Drag-and-drop process modeling",
+      "Business Rules Management System (BRMS)",
+      "RPA integration",
+      "Dynamic workload management",
+      "Real-time dashboards"
+    ],
+    "use_cases": [
+      "Loan approval workflows",
+      "Insurance claims processing",
+      "Customer onboarding",
+      "Operational process automation"
+    ],
+    "keywords": ["BPM", "Workflow Automation", "Low Code"],
+    "source_url": "https://newgensoft.com/platform/digital-process-automation/",
+    "summary": "Engine for designing and automating enterprise workflows with AI-driven intelligence."
+  },
+  {
+    "product_name": "OmniOMS",
+    "category": "Communication Intelligence",
+    "type": "Customer Communication Management (CCM)",
+    "description": "OmniOMS is a comprehensive customer communication platform that enables organizations to design, generate, and deliver personalized communications across multiple channels. It uses AI to optimize messaging, personalize content, and analyze customer interactions, ensuring consistent and engaging communication experiences.",
+    "key_capabilities": [
+      "Omnichannel communication delivery",
+      "Personalized messaging",
+      "Template design and management",
+      "Customer engagement analytics",
+      "Communication lifecycle management"
+    ],
+    "features": [
+      "Email, SMS, WhatsApp, print integration",
+      "AI-driven personalization",
+      "Communication tracking",
+      "Sentiment analysis",
+      "Dynamic content generation"
+    ],
+    "use_cases": [
+      "Banking statements and notifications",
+      "Customer engagement campaigns",
+      "Billing and invoicing communication",
+      "Marketing automation"
+    ],
+    "keywords": ["CCM", "Customer Communication", "Omnichannel"],
+    "source_url": "https://newgensoft.com/platform/customer-communication-management/",
+    "summary": "Platform for managing and personalizing customer communications across channels."
+  },
+  {
+    "product_name": "IDP Studio",
+    "category": "Document Intelligence",
+    "type": "Intelligent Document Processing",
+    "description": "IDP Studio is an AI-powered document processing solution that extracts structured data from unstructured documents such as invoices, forms, and contracts. It uses machine learning and OCR technologies to automate document classification, data extraction, and validation.",
+    "key_capabilities": [
+      "Document data extraction",
+      "AI-based classification",
+      "OCR and handwriting recognition",
+      "Model training and deployment",
+      "API-based integration"
+    ],
+    "features": [
+      "Pre-trained ML models",
+      "Automated validation",
+      "Data correction tools",
+      "Continuous learning",
+      "Multi-format support"
+    ],
+    "use_cases": [
+      "Invoice processing",
+      "KYC document extraction",
+      "Form digitization",
+      "Contract analysis"
+    ],
+    "keywords": ["IDP", "OCR", "Document AI"],
+    "source_url": "https://newgensoft.com/platform/content-services-platform/",
+    "summary": "AI solution for extracting and structuring data from documents."
+  },
+  {
+    "product_name": "Data & Document Science Platform",
+    "category": "Data Science Intelligence",
+    "type": "AI/ML Platform",
+    "description": "This platform enables enterprises to build, deploy, and manage machine learning models and analytics solutions. It supports the entire AI lifecycle, from data preparation to model deployment, and integrates seamlessly with business processes for real-time decision-making.",
+    "key_capabilities": [
+      "Machine learning model development",
+      "Data analytics and visualization",
+      "AutoML",
+      "Model deployment and monitoring",
+      "GenAI integration"
+    ],
+    "features": [
+      "Drag-and-drop ML pipelines",
+      "Pre-trained model library",
+      "Data integration tools",
+      "Real-time scoring",
+      "AI governance"
+    ],
+    "use_cases": [
+      "Fraud detection",
+      "Customer segmentation",
+      "Predictive analytics",
+      "Business intelligence"
+    ],
+    "keywords": ["AI", "ML", "Analytics"],
+    "source_url": "https://newgensoft.com/platform/",
+    "summary": "Platform for building and deploying AI and analytics solutions."
+  },
+  {
+    "product_name": "Marvin",
+    "category": "AI Agents",
+    "type": "Generative AI Productivity Agent",
+    "description": "Marvin is a generative AI-powered assistant embedded within NewgenONE that enhances productivity by automating workflows, summarizing documents, and enabling natural language interactions. It assists both developers and business users by generating applications and insights.",
+    "key_capabilities": [
+      "Workflow generation",
+      "Document summarization",
+      "Natural language querying",
+      "UI and app generation",
+      "Decision support"
+    ],
+    "features": [
+      "GenAI capabilities",
+      "Prompt-based automation",
+      "Knowledge retrieval",
+      "Content summarization",
+      "AI recommendations"
+    ],
+    "use_cases": [
+      "Automated report generation",
+      "Knowledge search",
+      "Workflow design",
+      "Decision assistance"
+    ],
+    "keywords": ["GenAI", "Assistant", "Automation"],
+    "source_url": "https://newgensoft.com/platform/",
+    "summary": "AI assistant that enhances productivity and automates tasks."
+  },
+  {
+    "product_name": "Harper",
+    "category": "AI Agents",
+    "type": "Conversion Intelligence Agent",
+    "description": "Harper is an AI agent focused on improving customer engagement and conversion rates. It analyzes customer interactions, identifies patterns, and provides actionable insights to optimize sales and service outcomes.",
+    "key_capabilities": [
+      "Customer interaction analysis",
+      "Sentiment analysis",
+      "Conversion optimization",
+      "Recommendation engine",
+      "Behavior analysis"
+    ],
+    "features": [
+      "AI-driven insights",
+      "Real-time recommendations",
+      "Customer analytics",
+      "Performance tracking"
+    ],
+    "use_cases": [
+      "Sales optimization",
+      "Customer service improvement",
+      "Marketing campaigns",
+      "Customer retention"
+    ],
+    "keywords": ["AI Agent", "Customer Intelligence"],
+    "source_url": "https://newgensoft.com/platform/",
+    "summary": "AI agent for improving customer engagement and conversion."
+  },
+  {
+    "product_name": "LumYn",
+    "category": "AI Agents",
+    "type": "Growth Intelligence Agent",
+    "description": "LumYn is an AI agent designed to identify growth opportunities and predict customer behavior. It uses advanced analytics and AI models to support marketing and business growth strategies.",
+    "key_capabilities": [
+      "Predictive analytics",
+      "Customer segmentation",
+      "Growth opportunity identification",
+      "Trend analysis"
+    ],
+    "features": [
+      "AI-driven predictions",
+      "Behavior modeling",
+      "Opportunity scoring",
+      "Data insights"
+    ],
+    "use_cases": [
+      "Marketing optimization",
+      "Customer targeting",
+      "Revenue growth strategies",
+      "Business forecasting"
+    ],
+    "keywords": ["AI Agent", "Growth Intelligence"],
+    "source_url": "https://newgensoft.com/platform/",
+    "summary": "AI agent for identifying growth opportunities and predicting trends."
+  },
+  {
+  "product_name": "Agent Studio",
+  "category": "AI Development Platform",
+  "type": "Agent Builder",
+  "description": "Agent Studio is a low-code development environment within NewgenONE that enables enterprises to design, train, and deploy custom AI agents. It allows integration with workflows, data sources, and APIs, enabling organizations to build domain-specific intelligent agents that automate decision-making and business processes.",
+  "key_capabilities": [
+    "AI agent creation",
+    "Workflow integration",
+    "Tool/API integration",
+    "Agent training and tuning",
+    "Deployment and monitoring"
+  ],
+  "use_cases": [
+    "Custom AI assistants",
+    "Automated decision agents",
+    "Domain-specific AI bots"
+  ],
+  "keywords": ["Agent Builder", "AI Studio", "Low Code AI"],
+  "summary": "Platform for building and deploying custom AI agents within NewgenONE."
+}
+]

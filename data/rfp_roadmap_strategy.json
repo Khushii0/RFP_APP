@@ -1,0 +1,1432 @@
+[
+    {
+        "industry_vertical_context": "The project is for Adani Group, a large conglomerate in India with diverse business interests across core sectors including energy and utility, transportation and logistics, consumer goods, and primary industry. This diverse operational landscape necessitates a procurement platform capable of handling a wide variety of goods and services, from industrial MRO (Maintenance, Repair, and Operations) items to general consumer goods. The requirement for automated tax calculation based on HSN Codes firmly places the solution within the Indian regulatory and taxation framework (GST).",
+        "high_level_strategic_objective": "To design, develop, and implement the 'One Adani Marketplace Platform', a centralized and intelligent procurement hub. The platform's primary goal is to streamline the entire procurement lifecycle by creating a unified interface that integrates Adani's internal SAP Ariba Catalogue Buying system (containing Approved Rate Contracts - ARCs) with multiple external B2B and e-commerce aggregator platforms. This will empower business users to make faster, smarter, and more cost-effective purchasing decisions by enabling real-time search, side-by-side price comparison, and a seamless checkout experience.",
+        "descriptive_pain_points": [
+            "Lack of Price Transparency: Procurement teams currently rely solely on internal Approved Rate Contract (ARC) data, which may not reflect current, more competitive market prices, leading to missed cost-saving opportunities.",
+            "Fragmented Procurement Process: Users are forced to manually switch between the internal SAP Ariba system and multiple external e-commerce sites to compare prices and product specifications, a process that reduces productivity and increases the likelihood of data entry errors.",
+            "Limited Visibility for Benchmarking: There is no centralized view that allows for the comparison of internal contract prices with real-time market rates, which hinders effective benchmarking and contract renegotiations with suppliers.",
+            "Inefficient Decision-Making: Users lack the necessary tools to quickly and efficiently evaluate the best procurement option between an internal ARC and an external vendor, causing delays in the procurement cycle.",
+            "Lack of Inventory Visibility: The current process does not provide visibility into the live stock availability at a supplier's warehouse, which increases order lead times and uncertainty in the supply chain.",
+            "Reliance on Manual Processes: The tasks of comparing prices from different sources and subsequent data entry are performed manually, making them highly time-consuming and prone to human error."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Unified Search Interface",
+                "functional_specification": "The platform must provide a single, powerful search bar as the primary user interface. Users should be able to find items using a variety of inputs including keywords, product categories, detailed specifications, supplier names, or specific item codes. To enhance user experience and speed up the search process, the interface must include features like autocomplete and intelligent search suggestions. The search results must display items from both internal ARCs and external platforms simultaneously.",
+                "non_functional_constraints": "The search functionality should be highly performant, returning results with minimal latency to provide a real-time feel for the user.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope & 4.2 Technical Requirements"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Multi-Source Price Comparison Engine",
+                "functional_specification": "This is a core feature designed to provide procurement transparency. When a user searches for an item, the engine must fetch and display prices from two distinct sources in a side-by-side comparison view: 1) The negotiated rates from internal Approved Rate Contracts (ARCs) fetched from SAP Ariba, including contract validity details. 2) Real-time, dynamic market pricing fetched via API from multiple external B2B and e-commerce platforms. The comparison must also include other critical decision-making data points such as delivery timelines and vendor ratings.",
+                "non_functional_constraints": "API calls to external platforms must be efficient and handle potential timeouts or errors gracefully without degrading the overall user experience. Data freshness is critical.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope & 4.2 Technical Requirements"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Single Checkout Experience",
+                "functional_specification": "To solve the problem of a fragmented buying process, the platform must allow users to add items from various sources (both internal ARCs and multiple external vendors) into a single, unified shopping cart. The user will then proceed through a single checkout process within the One Adani Marketplace Platform itself, without being redirected to external sites. Upon confirmation, the platform will then programmatically process the order by facilitating the final Purchase Requisition (PR) and Purchase Order (PO) creation within the integrated SAP Ariba system.",
+                "non_functional_constraints": null,
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Real-Time Inventory Visibility and Locking",
+                "functional_specification": "The platform must provide users with real-time visibility into the number of products/items available in a supplier's inventory. This visibility should be location-aware, showing stock levels based on the user's entered pin code to ensure accurate delivery estimates. Crucially, the system must also support inventory locking; once a PR is created for an item from an external vendor, the platform must lock that quantity with the supplier. This lock must be maintained through the internal approval process until the PO is officially released to the supplier, preventing stockouts.",
+                "non_functional_constraints": "The system requires robust, real-time API integration with supplier inventory systems. The locking mechanism must be reliable to prevent overselling.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope & 4.2 Technical Requirements"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Category-Based Access Control",
+                "functional_specification": "To ensure compliance and control over spending, the visibility of items and materials within the marketplace must be restricted based on user access rights. The system must implement a role-based or category-based access control system, mirroring the permissions structure in SAP Ariba Buying. This ensures that users can only view and purchase items from catalogues they are authorized to access, preventing unauthorized procurement.",
+                "non_functional_constraints": "The access control system must be secure and auditable, ensuring that permission changes are tracked and enforced consistently.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.2 Technical Requirements"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "End-to-End Delivery Status Tracking",
+                "functional_specification": "To enhance supply chain visibility and operational efficiency, the platform must integrate real-time tracking capabilities for all ordered materials. After a PO is released, users should be able to track the status of their delivery from the supplier's warehouse to the final destination directly within the marketplace interface, eliminating the need to check external carrier websites.",
+                "non_functional_constraints": "Requires integration with logistics and courier APIs to provide accurate, up-to-date tracking information.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.2 Technical Requirements"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Unified Dashboard and Reporting",
+                "functional_specification": "The platform must provide a unified dashboard with reporting capabilities. This dashboard should highlight key procurement metrics and decision points, such as the best available price for an item, the vendor with the fastest delivery, and the availability of an item on an internal ARC. It should also provide analytics on catalogue status, such as the number of live versus expired catalogues, to help with catalogue management. The interface must include robust filtering and sorting options to allow users to analyze the data effectively.",
+                "non_functional_constraints": null,
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.2 Technical Requirements"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Recommendation Engine",
+                "functional_specification": "The system should provide intelligent recommendations to the user for the best procurement option. This recommendation should be based on a multi-factor analysis that includes not just price, but also delivery time, vendor rating, and compliance with internal policies. This helps guide users towards the most optimal purchasing decision, balancing cost with other critical business factors.",
+                "non_functional_constraints": null,
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "3.3 Proposed Solution: One Adani Marketplace Platform"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Automated Tax Calculation via HSN Code",
+                "functional_specification": "The platform must automatically calculate the applicable tax tariff (e.g., GST) for any given item. This calculation must be performed by reading the Harmonized System of Nomenclature (HSN) Code associated with the product, which is fetched from the backend system. This feature is critical for financial compliance within the Indian market and must operate without requiring any manual user intervention to ensure accuracy and efficiency in the PR/PO process.",
+                "non_functional_constraints": "The system must maintain an up-to-date tax rule engine that correctly maps HSN codes to the current tax slabs as per Indian government regulations.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.2 Technical Requirements"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Dynamic Price Locking on PR Creation",
+                "logic_description": "When a user creates a Purchase Requisition (PR) for an item from an external vendor, the price quoted at that moment must be fixed and locked within the system. This locked price must be held firm until the PR goes through all internal approvals and a Purchase Order (PO) is officially released to the supplier. This price lock is valid for a maximum timeframe of 48 hours from the moment of PR creation, protecting the company from price volatility during the internal approval cycle.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope & 4.2 Technical Requirements"
+            },
+            {
+                "rule_title": "PR Termination on Contract Expiry",
+                "logic_description": "If a Purchase Requisition (PR) is associated with an internal Approved Rate Contract (ARC), the system must enforce a validity check. Any in-progress PR, or even a PR that has been approved by an approver but not yet converted to a PO, must be automatically terminated on the date that the associated contract is due to expire. This prevents the creation of POs against invalid or expired contracts, ensuring procurement compliance.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.2 Technical Requirements"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must be deployed on the Adani cloud Platform. This is a mandatory requirement due to the confidential nature of the procurement data being handled.",
+            "All data exchange and communication between the marketplace platform, SAP Ariba, and external e-commerce platforms must be secured using robust authentication and encryption mechanisms.",
+            "The solution must strictly adhere to the Adani Policy for data security, ensuring all data handling, storage, and transmission practices meet corporate standards.",
+            "The implementing vendor must hold ISO 27001 (Security) and ISO 20000 (Information Technology Service Management) certifications, demonstrating a commitment to industry-best practices for security and service management.",
+            "A seamless and secure data handshake must be established between SAP Ariba Catalogue Buying and the external commerce platforms to ensure data integrity and reliability."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "SAP Ariba Catalogue Buying",
+                "integration_purpose": "Serves as the primary internal system of record. The integration must pull internal item catalogues and Approved Rate Contract (ARC) data (including negotiated prices and validity) into the marketplace for comparison. It also serves as the destination system where the final, consolidated Purchase Requisition (PR) and Purchase Order (PO) are created and processed after the user completes the checkout on the marketplace platform.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "1 Introduction & 4.1 Functional Scope"
+            },
+            {
+                "system_name": "SAP ERP Platform",
+                "integration_purpose": "Works in conjunction with SAP Ariba to facilitate the final stages of the PR/PO process. The marketplace platform must ensure that the data passed for procurement is compatible with the SAP ERP system for downstream financial processing.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope"
+            },
+            {
+                "system_name": "External E-commerce / B2B Platforms",
+                "integration_purpose": "The platform must connect via APIs to at least 5 external platforms, explicitly naming Amazon Business, Flipkart, India Mart, Moglix, ProcMart, and Vashi Electricals. The purpose of this integration is to fetch real-time data including product pricing, detailed specifications, and inventory availability for side-by-side comparison against internal ARC data.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.1 Functional Scope & 4.2 Technical Requirements"
+            },
+            {
+                "system_name": "Adani Cloud Platform",
+                "integration_purpose": "This is the mandatory hosting environment for the entire One Adani Marketplace solution. The purpose is to ensure that all sensitive and confidential procurement data resides within Adani's own secure infrastructure, adhering to internal data governance and security policies.",
+                "source_filename": "Adani One Marketplace - REQUEST FOR PROPOSAL.pdf",
+                "section_header": "4.2 Technical Requirements"
+            }
+        ]
+    },
+    {
+        "industry_vertical_context": "The project is for AL HILAL Bank, focusing on the implementation of a Collections Management Solution for various lending products including Conventional and Islamic Banking.",
+        "high_level_strategic_objective": "To implement an End-to-End Digitalized Collections Management Solution for all lending products offered by AL HILAL Bank.",
+        "descriptive_pain_points": [
+            "Need for a comprehensive Collections & Recoveries Management System.",
+            "Requirement for a robust transaction engine to support various banking types."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Low Code Configuration Modules",
+                "functional_specification": "Modules such as MDM, BRMS, Form Designer, and Process Designer will be leveraged for low code configuration.",
+                "non_functional_constraints": "",
+                "source_filename": "Technical Proposal",
+                "section_header": "High Level Requirements"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Collections & Recoveries Management System",
+                "functional_specification": "An end-to-end system for managing collections and recoveries across various customer segments including Retail and SME.",
+                "non_functional_constraints": "",
+                "source_filename": "Technical Proposal",
+                "section_header": "High Level Requirements"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "End-to-End Processing for Banking Types",
+                "logic_description": "The system will support both Conventional and Islamic Banking for collections management.",
+                "source_filename": "Technical Proposal",
+                "section_header": "Key Objectives"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must ensure robust security and performance to handle high-volume transactions."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Transaction Engine",
+                "integration_purpose": "To support end-to-end processing for collections and recoveries management.",
+                "source_filename": "Technical Proposal",
+                "section_header": "Key Objectives"
+            }
+        ],
+        "_source_file": "Al Hilal Collections Management System.docx"
+    },
+    {
+        "industry_vertical_context": "The project is focused on the insurance sector, specifically addressing the policy lifecycle across various lines of business (LOBs) including Motor, Health, Property, Marine, Engineering, Liability, Travel, and SME products.",
+        "high_level_strategic_objective": "To implement a comprehensive policy lifecycle management system that supports multiple structured stages and integrates with existing regulatory frameworks.",
+        "descriptive_pain_points": [
+            "Need for a standardized policy lifecycle framework across all LOBs.",
+            "Integration challenges with existing KYC and regulatory systems.",
+            "Requirement for automated compliance checks and validations."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Event-Driven Lifecycle Orchestration",
+                "functional_specification": "The system enables event-driven lifecycle orchestration aligned with Lloyd\u2019s Blueprint Two events such as RiskSubmitted, QuoteGenerated, PolicyBound, PolicyIssued, EndorsementCreated, and CancellationProcessed.",
+                "non_functional_constraints": "Must support high availability and scalability.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5.1.2"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Dynamic Forms Generation",
+                "functional_specification": "The system is capable of generating dynamic, responsive, product-driven forms based on selected LOB and coverage configuration.",
+                "non_functional_constraints": "Forms must be user-friendly and accessible.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5.1.2"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "KYC & ID Validation",
+                "functional_specification": "The system integrates with government ID verification APIs for real-time validation of Emirates ID or other regulatory identity checks.",
+                "non_functional_constraints": "Must comply with data privacy regulations.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5.1.1"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Automated Policy Issuance",
+                "functional_specification": "The system is capable of enabling straight-through automatic policy issuance for simple products common across all LOBs.",
+                "non_functional_constraints": "Must ensure secure digital signatures.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5.1.7"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Dynamic Pricing Adjustments",
+                "logic_description": "The system must support rate tables, parametric pricing, and dynamic pricing adjustments through a configurable rule engine.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5.1.3"
+            },
+            {
+                "rule_title": "Underwriting Decision Audit Trail",
+                "logic_description": "Underwriting decisions must produce an audit explanation for all AI-driven recommendations to ensure transparency.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5.1.4"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must comply with data privacy regulations and support secure integration with external systems for KYC and AML checks."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Newgen",
+                "integration_purpose": "To provide a comprehensive policy lifecycle management solution that integrates with existing regulatory frameworks and supports various insurance products.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "5"
+            }
+        ],
+        "_source_file": "Al Wathba_Core_Modernization_RFP_Compliance_Matrix (2).xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for IndusInd Bank, focusing on unsecured business loans for micro entrepreneurs.",
+        "high_level_strategic_objective": "To review and continue product variants BSS and LTBMS under the Unsecured Business Loans program, with proposed modifications and enhancements.",
+        "descriptive_pain_points": [
+            "Higher delinquency levels observed in NTB and ETB customers with longer tenures.",
+            "Need for differentiation in offerings between BSS and LTBMS products."
+        ],
+        "horizontal_capabilities": [],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Enhanced Product Program Limit",
+                "functional_specification": "Increase combined product program limit from Rs. 5,100 crore to Rs. 7,000 crore.",
+                "non_functional_constraints": "",
+                "source_filename": "IndusInd_RFP.pdf",
+                "section_header": "Product Modifications"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Tenure Risk Management",
+                "functional_specification": "Limit tenure to 12 months for NTB customers with high delinquency and maintain 18 months for those with good credit history.",
+                "non_functional_constraints": "",
+                "source_filename": "IndusInd_RFP.pdf",
+                "section_header": "Modifications"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Dynamic Tenure Adjustment for NTB and ETB Customers",
+                "logic_description": "Adjust loan tenure based on customer credit history and repayment behavior to mitigate delinquency risks.",
+                "source_filename": "IndusInd_RFP.pdf",
+                "section_header": "Modifications"
+            }
+        ],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [],
+        "_source_file": "BFIL-Product Program-Review-Business Loans-Micro Entrepreneurs (BSS and BMS)-ECC-May'23-Revised.docx"
+    },
+    {
+        "industry_vertical_context": "The project is for HUDCO, a Navratna Public Sector Undertaking under the Ministry of Housing and Urban Affairs, focused on housing and urban development in India.",
+        "high_level_strategic_objective": "To implement a generative AI solution that enhances efficiency, effectiveness, and transparency within HUDCO.",
+        "descriptive_pain_points": [
+            "Inefficiency in document review and data extraction processes.",
+            "Lack of integrated tools for data analysis and reporting.",
+            "Need for improved staff productivity and accountability."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Integrated NLP Capabilities",
+                "functional_specification": "The solution must provide text analysis, sentiment analysis, document summaries, and ICR/OCR engine flexibility with English & Hindi language support.",
+                "non_functional_constraints": "Must support a minimum file size of 50MB for upload.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Technical Qualification"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Self-Service Analytics and Reporting",
+                "functional_specification": "End users can design their own dashboards and generate reports.",
+                "non_functional_constraints": "The dashboard must support various department use cases.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Document Data Extraction and Classification",
+                "functional_specification": "Extract and classify data from PDFs, Word, Excel files, and scanned reports, populating key data in relevant formats.",
+                "non_functional_constraints": "Must provide Word editing capabilities within the AI environment.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Technical Qualification"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Conversational AI for Document Retrieval",
+                "functional_specification": "Provide a conversational window for users to get answers in simple language from document repositories and external sites.",
+                "non_functional_constraints": "Access controls must restrict data visibility to authorized personnel only.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Role-Based Access Control",
+                "logic_description": "Access controls based on user roles and permissions to restrict data visibility to authorized personnel.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            },
+            {
+                "rule_title": "Self-Learning AI Model",
+                "logic_description": "The AI system must be adaptive, capable of evolving and analyzing data more effectively over time.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must provide robust security and privacy for access controls, ensuring data visibility is restricted to authorized personnel."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Integration with External APIs",
+                "integration_purpose": "API integration with external sites like One Drive, Gmail, ROC, MCA, etc. for seamless data transfer.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            }
+        ],
+        "_source_file": "BidSynopsis_HUDCO_AI_v1.pptx"
+    },
+    {
+        "industry_vertical_context": "BMO Financial Group is a leader in global banking, providing Personal and Commercial Banking, Wealth Management, and Investment Services to over 12 million customers.",
+        "high_level_strategic_objective": "To select a provider of AI solutions for Collections operations within Canada.",
+        "descriptive_pain_points": [],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Agent Assist",
+                "functional_specification": "Auto transcription (English and Canadian French required), quality management, coaching, live call listening with agent suggestions/nudges, performance analytics, employee & management dashboards, and customer speech analytics.",
+                "non_functional_constraints": "",
+                "source_filename": "",
+                "section_header": ""
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Virtual Agent",
+                "functional_specification": "24/7 services, escalations to live agent, low balance/low risk inquiry support.",
+                "non_functional_constraints": "",
+                "source_filename": "",
+                "section_header": ""
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Workforce Management",
+                "functional_specification": "Predictive resource forecasting, dynamic scheduling, omnichannel support, real-time schedule adherence reporting & dashboards.",
+                "non_functional_constraints": "",
+                "source_filename": "",
+                "section_header": ""
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Intelligent Call Routing",
+                "functional_specification": "Assess caller intent and route to appropriate agent based on historical data to improve first call resolution.",
+                "non_functional_constraints": "",
+                "source_filename": "",
+                "section_header": ""
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Offers Integration",
+                "functional_specification": "Recommend best offer based on customer profile and qualifications.",
+                "non_functional_constraints": "",
+                "source_filename": "",
+                "section_header": ""
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Personalized Customer Interactions",
+                "functional_specification": "Tailor greetings to build customer loyalty based on historical interactions.",
+                "non_functional_constraints": "",
+                "source_filename": "",
+                "section_header": ""
+            }
+        ],
+        "business_logic_and_policies": [],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [],
+        "_source_file": "BMO RFP Overview.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is for the Central Bank of India, focusing on the design, supply, implementation, and maintenance of a Data Lakehouse and AI/Gen AI platform for data transformation and AI banking.",
+        "high_level_strategic_objective": "To create a robust data infrastructure that supports advanced analytics and AI capabilities for banking operations.",
+        "descriptive_pain_points": [
+            "Need for a comprehensive data management solution.",
+            "Integration of AI capabilities into banking processes.",
+            "Challenges in data migration from current infrastructure."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Data Lakehouse Architecture",
+                "functional_specification": "Design and implement a scalable data lakehouse architecture to support diverse data types.",
+                "non_functional_constraints": "Must ensure high availability and disaster recovery.",
+                "source_filename": "RFP_Central_Bank_India.pdf",
+                "section_header": "6.3.1"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Advanced Analytics Capabilities",
+                "functional_specification": "Enable advanced analytics functionalities for data insights.",
+                "non_functional_constraints": "Performance and scalability must be ensured.",
+                "source_filename": "RFP_Central_Bank_India.pdf",
+                "section_header": "6.3.4"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "AI and Machine Learning Use Cases",
+                "functional_specification": "Implement AI and machine learning use cases to enhance banking services.",
+                "non_functional_constraints": "Compliance with data protection regulations is required.",
+                "source_filename": "RFP_Central_Bank_India.pdf",
+                "section_header": "6.8.3"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Generative AI Use Cases",
+                "functional_specification": "Develop generative AI applications for customer engagement.",
+                "non_functional_constraints": "Must adhere to security and compliance standards.",
+                "source_filename": "RFP_Central_Bank_India.pdf",
+                "section_header": "6.8.4"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Data Migration Strategy",
+                "logic_description": "Assess and plan for the migration of existing data infrastructure to the new platform.",
+                "source_filename": "RFP_Central_Bank_India.pdf",
+                "section_header": "6.10"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must comply with data protection regulations and ensure secure data handling throughout the platform."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Current Data Infrastructure",
+                "integration_purpose": "Migrate existing data and applications to the new data lakehouse platform.",
+                "source_filename": "RFP_Central_Bank_India.pdf",
+                "section_header": "6.10"
+            }
+        ],
+        "_source_file": "CBI Data Transformation AI Banking_06Feb26.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is for a banking institution focusing on AI and machine learning capabilities.",
+        "high_level_strategic_objective": "To implement advanced AI/ML solutions that enhance operational efficiency, decision-making, and customer engagement.",
+        "descriptive_pain_points": [
+            "Need for seamless integration of AI/ML models into operational workflows.",
+            "Challenges in managing and monitoring AI/ML lifecycle and compliance.",
+            "Requirement for explainability and transparency in AI-driven outcomes."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "AI/ML Experimentation Framework",
+                "functional_specification": "Provide tools for rapid experimentation with AI/ML models, including automated hyperparameter tuning and model selection.",
+                "non_functional_constraints": "Support tracking and comparing experiments, including data versions, parameters, and results.",
+                "source_filename": "RFP Document",
+                "section_header": "2"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Natural Language Querying",
+                "functional_specification": "Enable users to query data using natural language for faster insights.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP Document",
+                "section_header": "8"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Explainable AI (XAI)",
+                "functional_specification": "Ensure models are explainable and auditable to meet ethical AI standards and regulatory requirements.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP Document",
+                "section_header": "7"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Generative AI Capabilities",
+                "functional_specification": "Enable multi-lingual text generation, audio generation, image synthesis, video generation, and other GenAI functionalities.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP Document",
+                "section_header": "4"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Agentic AI Framework",
+                "functional_specification": "Provide a framework for building autonomous agents capable of decision-making and task execution.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP Document",
+                "section_header": "5"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "MLOps",
+                "functional_specification": "Integrate MLOps workflows to ensure continuous, automated AI lifecycle management.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP Document",
+                "section_header": "12"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Open Source Regulations in AI/ML Domain",
+                "logic_description": "Open-source components shall be used only under permissive licenses, with no legal, IP, or disclosure obligations imposed on the Bank.",
+                "source_filename": "RFP Document",
+                "section_header": "13"
+            },
+            {
+                "rule_title": "AgentOps (Agentic AI Management)",
+                "logic_description": "Provide AgentOps capabilities for managing multiple autonomous or semi-autonomous AI agents with defined roles, goals, and safety constraints.",
+                "source_filename": "RFP Document",
+                "section_header": "14"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The architecture shall natively support multi-modal data, including structured, semi-structured, and unstructured formats."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Agentic API Framework",
+                "integration_purpose": "Implement an Agentic API Framework for interoperability and governance.",
+                "source_filename": "RFP Document",
+                "section_header": "10"
+            },
+            {
+                "system_name": "AI Data Lifecycle Management Framework",
+                "integration_purpose": "Implement a comprehensive AI Data Lifecycle Management Framework to ensure data quality and compliance.",
+                "source_filename": "RFP Document",
+                "section_header": "18"
+            }
+        ],
+        "_source_file": "CBI RFP_AI GenAI Agentic AI_Use Case_v01.xlsx"
+    },
+    {
+        "industry_vertical_context": "The project involves NewgenONE's credit decisioning solution, which leverages AI and ML technologies for automating risk evaluation and credit decision recommendations.",
+        "high_level_strategic_objective": "To enhance credit decision-making processes through the integration of AI and ML technologies, ensuring faster, more accurate, and compliant outcomes.",
+        "descriptive_pain_points": [
+            "Need for improved risk evaluation methods.",
+            "Challenges in personalizing loan offers.",
+            "Requirement for transparency in AI decision-making."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "AI-Driven Application Risk Assessment",
+                "functional_specification": "AI models analyze historical repayment behavior and credit data to assign risk scores.",
+                "non_functional_constraints": "Must ensure compliance with regulatory requirements.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.1"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Explainable AI",
+                "functional_specification": "Provides human-readable explanations for credit decisions.",
+                "non_functional_constraints": "Must maintain transparency and compliance.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.1"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Real-Time Decision Making",
+                "functional_specification": "Supports real-time predictions through REST API deployed models.",
+                "non_functional_constraints": "Must ensure low latency in decision-making.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.3"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Dynamic Credit Limit and Offer Personalization",
+                "functional_specification": "Generates personalized loan offers based on borrower profiles and repayment behavior.",
+                "non_functional_constraints": "Must comply with data privacy regulations.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.1"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Predictive Risk Modeling",
+                "functional_specification": "Uses ML models to predict key risk indicators like Probability of Default.",
+                "non_functional_constraints": "Models must be regularly retrained with fresh data.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.2"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Model Governance and Compliance",
+                "logic_description": "AI models are governed by a Trusted AI framework ensuring explainability and auditability.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.5"
+            },
+            {
+                "rule_title": "Data Handling and Privacy",
+                "logic_description": "KeyBank's data is used for model training with strict governance protocols to ensure privacy and compliance.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.6"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must ensure data is processed in secure environments and comply with local and regional regulatory requirements."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "NewgenONE Data Science Studio",
+                "integration_purpose": "Provides end-to-end machine learning lifecycle functionalities.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "17.3"
+            },
+            {
+                "system_name": "Generative AI Capabilities",
+                "integration_purpose": "Includes AI agents for natural language processing and task fulfillment.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "18.1"
+            }
+        ],
+        "_source_file": "CDE Questions_KeyBank_Updated.xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for GBK Corporate, focusing on Islamic financing solutions.",
+        "high_level_strategic_objective": "To assess vendor capabilities in providing Islamic financing products and services.",
+        "descriptive_pain_points": [],
+        "horizontal_capabilities": [],
+        "vertical_capabilities": [],
+        "business_logic_and_policies": [],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [],
+        "_source_file": "Gulf Bank_GBK CFOS Selection BRS v2_v2(28.11.25).xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for HUDCO, focusing on the design, development, implementation, maintenance, and support of various Manual Process Automation solutions.",
+        "high_level_strategic_objective": "To develop and deploy an AI/ML Application that automates manual processes and enhances operational efficiency.",
+        "descriptive_pain_points": [
+            "Manual processes leading to inefficiencies.",
+            "Need for improved data management and retrieval.",
+            "Integration challenges with existing systems."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Web Portal Interface",
+                "functional_specification": "A single window interface for search and access to results, allowing user interaction.",
+                "non_functional_constraints": "Must support seamless action integration and API integration with external sites.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Section II - Scope of Work"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Intelligent Document Processing",
+                "functional_specification": "Automatically classify and extract data from various document types, transferring it to a central knowledge repository.",
+                "non_functional_constraints": "Must support high-volume scanning and ensure accuracy in document capture.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Section II - Scope of Work"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Dynamic Data Retrieval",
+                "logic_description": "Retrieve documents based on search criteria or semantic user queries with auto-suggest functionality.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Section II - Scope of Work"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must ensure 99.9% uptime and comply with evolving security requirements by CERT-IN.",
+            "Access controls must restrict data visibility to authorized personnel only."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Central Knowledge Repository",
+                "integration_purpose": "To store and organize extracted data and documents for easy retrieval and compliance.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Section II - Scope of Work"
+            }
+        ],
+        "_source_file": "HUDCO AI ML RFP v1.1.docx"
+    },
+    {
+        "industry_vertical_context": "The project is for HUDCO, focusing on the development and deployment of AI cloud services for various operational wings.",
+        "high_level_strategic_objective": "To implement AI tools for data extraction, classification, and compliance support across different departments.",
+        "descriptive_pain_points": [
+            "Inefficient data extraction from legacy documents.",
+            "Lack of structured document repository for HR and operational guidelines.",
+            "Challenges in compliance adherence and data security."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Natural Language Understanding",
+                "functional_specification": "Users can interact naturally, posing questions in complete sentences.",
+                "non_functional_constraints": "Must support diverse user queries.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Seamless Action Integration",
+                "functional_specification": "Users can execute actions directly within the platform, integrating with external APIs.",
+                "non_functional_constraints": "Requires API integration with MCA, CIBIL, PAN/GSTIN.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Robust Security and Privacy",
+                "functional_specification": "Access controls based on user roles and permissions.",
+                "non_functional_constraints": "Must ensure data visibility is restricted to authorized personnel.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "AI in Operation Wing",
+                "functional_specification": "Extract and classify data from documents for appraisal reports.",
+                "non_functional_constraints": "Must handle PDFs, Word files, and scanned reports.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "AI in HR/Admin Wing",
+                "functional_specification": "Analyze legacy employee records and create a structured document repository.",
+                "non_functional_constraints": "Must support both structured and unstructured data.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "AI in CS Wing",
+                "functional_specification": "Support compliance adherence and safeguard sensitive data.",
+                "non_functional_constraints": "Must enable quick retrieval using keyword search.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Scope of Work"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "User-Level Access Controls",
+                "logic_description": "Built-in user-level access controls and administrator logs for transparency.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Responsibility of Bidder"
+            },
+            {
+                "rule_title": "99.9% Uptime Guarantee",
+                "logic_description": "Bidder must ensure 99.9% uptime of all services.",
+                "source_filename": "RFP_HUDCO.pdf",
+                "section_header": "Responsibility of Bidder"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must ensure security of AI services on cloud and cloud infrastructure from threats and vulnerabilities."
+        ],
+        "comprehensive_ecosystem": [],
+        "_source_file": "HUDCO AI RFP draft.docx"
+    },
+    {
+        "industry_vertical_context": "KeyBank is seeking a Credit Decision Engine Vendor to support its consumer lending business.",
+        "high_level_strategic_objective": "To identify a decision engine that can provide a comprehensive rules and decision management system for new account originations.",
+        "descriptive_pain_points": [
+            "Current decision engine reaches end of life in 2025.",
+            "Need for a new decision engine to support consumer lending for years to come."
+        ],
+        "horizontal_capabilities": [],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Comprehensive Rules and Decision Management System",
+                "functional_specification": "Designed for new account originations.",
+                "non_functional_constraints": "",
+                "source_filename": "KeyBank_Credit_Decisioning_Engine_RFI.pdf",
+                "section_header": "1 Overview"
+            }
+        ],
+        "business_logic_and_policies": [],
+        "data_architecture_and_security": [
+            "All communication during the bidding will be secured according to the encryption standard, 128 SSL."
+        ],
+        "comprehensive_ecosystem": [],
+        "_source_file": "Key Bank_NTCopy_bid_export.xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for Life Insurance Corporation of India, focusing on the development of a next-generation business platform.",
+        "high_level_strategic_objective": "To develop a next-generation business platform for Life Insurance Corporation of India.",
+        "descriptive_pain_points": [],
+        "horizontal_capabilities": [],
+        "vertical_capabilities": [],
+        "business_logic_and_policies": [],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [],
+        "_source_file": "LIC - New business platform.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is for Life Insurance Corporation of India (LIC), a major public sector enterprise focused on IT and digital transformation.",
+        "high_level_strategic_objective": "To procure Agentic AI and GenAI platforms and empanel service providers for digital transformation.",
+        "descriptive_pain_points": [],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Online Bid Submission",
+                "functional_specification": "Bids must be submitted through the e-Tendering System portal.",
+                "non_functional_constraints": "Proposals should be submitted in English.",
+                "source_filename": "RFP Document",
+                "section_header": "3"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Agentic AI and GenAI Platforms",
+                "functional_specification": "The platforms should support various AI functionalities as per the specifications in the RFP.",
+                "non_functional_constraints": "Must comply with the Government of India procurement framework.",
+                "source_filename": "RFP Document",
+                "section_header": "5"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Evaluation Criteria",
+                "logic_description": "The evaluation of responses will be based on pre-qualification, technical evaluation, and commercial bid opening.",
+                "source_filename": "RFP Document",
+                "section_header": "4"
+            }
+        ],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "e-Tendering System",
+                "integration_purpose": "To facilitate online submission and management of bids.",
+                "source_filename": "RFP Document",
+                "section_header": "3"
+            }
+        ],
+        "_source_file": "LIC_ RFP_Procurement_of_Agentic_AI_and_GenAI_Platforms.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is for Life Insurance Corporation of India, focusing on the development of a next-generation business platform.",
+        "high_level_strategic_objective": "To develop a modern business platform that enhances operational efficiency and customer engagement.",
+        "descriptive_pain_points": [],
+        "horizontal_capabilities": [],
+        "vertical_capabilities": [],
+        "business_logic_and_policies": [],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [],
+        "_source_file": "LIC_01 NextGen_Newbusiness_Platform_RFP.pdf"
+    },
+    {
+        "industry_vertical_context": "The project focuses on developing a comprehensive loan pricing and auto-decisioning process, integrating with applicant POS and adjudication processes.",
+        "high_level_strategic_objective": "To build a full end-to-end loan pricing and auto-decisioning process that supports loan officers and other team members in reviewing and decisioning applications.",
+        "descriptive_pain_points": [
+            "Need for a standardized data model that is not proprietary.",
+            "Challenges in managing and administering the business process for loan applications.",
+            "Requirement for continuous updates to decisioning and pricing models."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Standardized Data Model",
+                "functional_specification": "The model must support extensible taxonomy and ontology without breaking the standard data model.",
+                "non_functional_constraints": "Must not be proprietary.",
+                "source_filename": "RFP Document",
+                "section_header": "1"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Decisioning & Pricing Business Process Management",
+                "functional_specification": "The platform must manage models and rules for decision and pricing algorithms.",
+                "non_functional_constraints": "Must provide out-of-the-box baseline decision and pricing models.",
+                "source_filename": "RFP Document",
+                "section_header": "3.1"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Loan Product Types",
+                "functional_specification": "Support for various loan products including secured and unsecured personal and business term loans.",
+                "non_functional_constraints": "Must be available out of the box.",
+                "source_filename": "RFP Document",
+                "section_header": "2"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Model Governance",
+                "logic_description": "Must provide end-to-end data lineage traceability from ingestion to model to rules.",
+                "source_filename": "RFP Document",
+                "section_header": "3.1.3"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The platform must ensure seamless integration of data sources and provide robust data ingestion capabilities."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Newgen Data Science Platform",
+                "integration_purpose": "To automate and enhance the decision-making process for auto loans.",
+                "source_filename": "RFP Document",
+                "section_header": "3.1"
+            }
+        ],
+        "_source_file": "Navy Federal_Newgen Lending Transformation RFP_Capabilities Consumer Lendi_ Final.xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for NDB Bank PLC, focusing on the implementation of a Loan Origination System (LOS) for managing SME and selected retail banking products.",
+        "high_level_strategic_objective": "To implement a robust Loan Origination Module that efficiently manages the complete origination workflow from lead capture to disbursement.",
+        "descriptive_pain_points": [
+            "Need for seamless integration with existing systems to enhance operational efficiency.",
+            "Requirement for improved data accuracy and compliance with industry standards."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Workflow Automation",
+                "functional_specification": "Enables role-based access for each stage of origination to ensure transparency and compliance.",
+                "non_functional_constraints": "Must support high availability and failover mechanisms.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "3"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Data Encryption",
+                "functional_specification": "Employs robust encryption methods to protect sensitive customer and loan information.",
+                "non_functional_constraints": "Must comply with GDPR, PCI DSS, and CBSL data protection directives.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "5"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Loan Origination Module",
+                "functional_specification": "Covers origination for SME and selected retail products, including lead registration, application creation, and disbursement initiation.",
+                "non_functional_constraints": "Must integrate with Core Banking, Credit Bureau APIs, CRM, DMS, and eKYC systems.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "7"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Role-based Access Control",
+                "logic_description": "Ensures that only authorized personnel have access to sensitive data within the loan origination module.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "5"
+            },
+            {
+                "rule_title": "Automated Validation of Mandatory Data Fields",
+                "logic_description": "Provides real-time error prompts for mandatory data fields during application submission.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "7"
+            }
+        ],
+        "data_architecture_and_security": [
+            "All data must be hosted on-premises or in a locally hosted data center as per NDB Bank\u2019s information security policies.",
+            "Implement a robust backup and recovery system to prevent data loss."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Core Banking System",
+                "integration_purpose": "Integration for customer, account, disbursement posting, and liability account integration.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "7"
+            },
+            {
+                "system_name": "Credit Bureau APIs",
+                "integration_purpose": "Triggers bureau checks per credit policy.",
+                "source_filename": "RFP_NDB_Bank.pdf",
+                "section_header": "7"
+            }
+        ],
+        "_source_file": "NDB_RFP.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is for Pine Labs, focusing on transforming end-to-end merchant operations using Agentic AI.",
+        "high_level_strategic_objective": "To evaluate strategic partners for implementing autonomous, outcome-driven workflows in merchant operations.",
+        "descriptive_pain_points": [],
+        "horizontal_capabilities": [],
+        "vertical_capabilities": [],
+        "business_logic_and_policies": [],
+        "data_architecture_and_security": [],
+        "comprehensive_ecosystem": [],
+        "_source_file": "Pinelabs.docx"
+    },
+    {
+        "industry_vertical_context": "The project is for KCB Bank Kenya Limited, focusing on a credit scoring and limit management solution.",
+        "high_level_strategic_objective": "To implement an automated credit scoring and decisioning engine that enhances customer experience and operational efficiency.",
+        "descriptive_pain_points": [
+            "Need for automated credit scoring to reduce manual intervention.",
+            "Challenges in managing customer credit limits effectively."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "User Access Management",
+                "functional_specification": "Ability to configure different types of users and access matrix for various modules.",
+                "non_functional_constraints": "Robust security scheme for granular control.",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "3.01"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Data Integration and Connectivity",
+                "functional_specification": "Ability to integrate with various data sources and provide real-time data access.",
+                "non_functional_constraints": "Support for out-of-the-box connectors and real-time integration.",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "3.04"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Automated Limit Assignment",
+                "functional_specification": "Automatically calculates and assigns limits to customers based on configured business rules.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "4.01"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Credit Utilization Monitoring",
+                "functional_specification": "Tracks credit limit utilization in real-time with configurable thresholds.",
+                "non_functional_constraints": "",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "4.03"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Credit Scoring Frequency Configuration",
+                "logic_description": "Ability to configure credit scoring frequency including manual, scheduled, and real-time.",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "3.10"
+            },
+            {
+                "rule_title": "Workflow - Risk Based Pricing",
+                "logic_description": "Support for design and implementation of risk-based credit pricing rules.",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "3.16"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must support security of data in transit and at rest, including end-to-end encryption and multifactor authentication."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Core Banking Solution",
+                "integration_purpose": "To facilitate real-time data access and integration for credit scoring.",
+                "source_filename": "RFP_KCB_Bank.pdf",
+                "section_header": "3.06"
+            }
+        ],
+        "_source_file": "PRESENTATION INVITATION LETTER -CREDIT SCORING AND LIMIT MANAGEMENT.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is focused on Credit Risk Management for banks, specifically addressing the needs for advanced credit assessment capabilities and collection operations.",
+        "high_level_strategic_objective": "To enhance the bank's credit risk management framework and improve the effectiveness of collections operations through advanced analytics and automation.",
+        "descriptive_pain_points": [
+            "Lack of comprehensive frameworks for calculating Expected Credit Loss (ECL).",
+            "Need for advanced models for credit risk assessment and management.",
+            "Inefficiencies in collections operations and the need for better integration of outsourced agencies."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Automated Credit Appraisal Note Generation",
+                "functional_specification": "Capability to generate automated credit appraisal notes for MSME loans using Gen-AI.",
+                "non_functional_constraints": "Must comply with regulatory guidelines and risk appetite.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.01.05"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Mobile Application for Collections",
+                "functional_specification": "Mobile app for collections agents with features for real-time tracking and logging of collection activities.",
+                "non_functional_constraints": "Data encryption must be implemented to protect sensitive information.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.02.03"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Data Based Probability of Default (PD) Model",
+                "functional_specification": "Model based on historical data and economic cycles to calculate PD.",
+                "non_functional_constraints": "Must be validated with back testing and benchmarking.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.01.01"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Digital Automated Tool for SARFAESI",
+                "functional_specification": "Tool to automate processes related to SARFAESI, including NPA tagging and document management.",
+                "non_functional_constraints": "Integration between legal and collections teams is required.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.03.01"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Dynamic Risk Grading and Pricing",
+                "logic_description": "Utilizes customer data to assess risk and determine creditworthiness, leading to dynamic pricing models.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.01.04"
+            },
+            {
+                "rule_title": "Policy for Outsourced Collections",
+                "logic_description": "Establishes guidelines for the attribution of collections between internal teams and outsourced agencies.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.02.01"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must ensure data encryption to protect sensitive bank information shared with agents."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Collections CRM",
+                "integration_purpose": "To integrate AI-driven tools for recovery actions and automate logging of outcomes.",
+                "source_filename": "RFP_Document.pdf",
+                "section_header": "01.02.04"
+            }
+        ],
+        "_source_file": "PSB_EASE 8.0 FOR FINTECH 23-05-2025.xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for the Reserve Bank of India, focusing on the implementation of a Complaint Management System 2.0.",
+        "high_level_strategic_objective": "To implement a modern, scalable, and secure complaint management platform with enhanced functionalities including AI, improved analytics, and user experience for technology-enabled consumer protection.",
+        "descriptive_pain_points": [
+            "Need for a unified digital platform for consumer grievance redressal.",
+            "Large volumes of structured and unstructured data that require effective management.",
+            "Challenges in ensuring compliance with evolving regulatory frameworks."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Multilingual and Accessible Design",
+                "functional_specification": "Support for multiple Indian languages, screen-reader compatibility, and compliance with WCAG 2.1 and GIGW 3.0.",
+                "non_functional_constraints": "Ensure visual clarity, guided form flows, and mobile responsiveness.",
+                "source_filename": "RBI_EOI_CMS_2.0.pdf",
+                "section_header": "3.2.1.d"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Automated Acknowledgements and Alerts",
+                "functional_specification": "Generate instant acknowledgements, reminders for pending information, and closure notifications through SMS/email/WhatsApp.",
+                "non_functional_constraints": "Ensure message templates are configurable and compliant with regulatory standards.",
+                "source_filename": "RBI_EOI_CMS_2.0.pdf",
+                "section_header": "3.2.3.a"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "AI-driven Complaint Registration",
+                "functional_specification": "Incorporate capabilities for auto-extraction of information, AI-based draft generation, and automated identification of missing details.",
+                "non_functional_constraints": "Ensure secure upload, storage, processing, and retrieval of documents.",
+                "source_filename": "RBI_EOI_CMS_2.0.pdf",
+                "section_header": "3.2.1.b"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Configurable Lifecycle Management",
+                "functional_specification": "Support complete complaint lifecycle management with configurable workflow rules and SLAs.",
+                "non_functional_constraints": "Maintain secure, immutable logs for every action and decision.",
+                "source_filename": "RBI_EOI_CMS_2.0.pdf",
+                "section_header": "3.2.2.a"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Automated Routing and Prioritization",
+                "logic_description": "Enable automated complaint assignment based on complexity, jurisdiction, category, and predefined rules.",
+                "source_filename": "RBI_EOI_CMS_2.0.pdf",
+                "section_header": "3.2.2.b"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must comply with the Digital Personal Data Protection Act, 2023, ensuring comprehensive data privacy, accessibility, and compliance controls."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Reserve Bank Integrated Ombudsman Scheme, 2021",
+                "integration_purpose": "Central mechanism for consumer grievance redressal across regulated entities.",
+                "source_filename": "RBI_EOI_CMS_2.0.pdf",
+                "section_header": "2"
+            }
+        ],
+        "_source_file": "RBI Complaint Management System.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is focused on implementing a scanning, document management, and workflow management solution in the Banking, Financial Services, and Insurance (BFSI) sector in India.",
+        "high_level_strategic_objective": "To provide a comprehensive solution that includes low code-based workflow management, document management, and AI/ML capabilities from a single OEM.",
+        "descriptive_pain_points": [
+            "Need for a unified solution for document management and workflow processes.",
+            "Challenges in managing complex business rules and workflows."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Workflow Management System",
+                "functional_specification": "The system should allow users to design, manage, and control workflows with various routing logic and business rules.",
+                "non_functional_constraints": "The solution must be platform independent and support both Linux and Windows.",
+                "source_filename": "RFP Document",
+                "section_header": "Requirement Category"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Intelligent Document Processing (IDP)",
+                "functional_specification": "The system should automatically classify documents and extract data from semi-structured or unstructured documents.",
+                "non_functional_constraints": "The solution must be compliant with industry standards.",
+                "source_filename": "RFP Document",
+                "section_header": "Similar Projects Definition"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Dynamic Workflow Management",
+                "logic_description": "The system should support ad-hoc routing, rule-based routing, and exception handling within workflows.",
+                "source_filename": "RFP Document",
+                "section_header": "Workflow Management"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must support integration with Lightweight Directory Access Protocol (LDAP) for authentication and single sign-on.",
+            "The system must comply with SSL, HTTPS, and session timeout standards."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Document Management System",
+                "integration_purpose": "To store and manage documents within the workflow management solution.",
+                "source_filename": "RFP Document",
+                "section_header": "Workflow Management"
+            }
+        ],
+        "_source_file": "RBI_DIT_Eligibility Criteria & Technical Specs for AI Platform RFP.xlsx"
+    },
+    {
+        "industry_vertical_context": "The project is for the Reserve Bank of India, focusing on the implementation of a Complaint Management System 2.0.",
+        "high_level_strategic_objective": "To implement a modern, scalable, and secure architecture for the Complaint Management System with enhanced functionalities including AI, improved analytics, and user experience.",
+        "descriptive_pain_points": [
+            "Need for a unified digital platform for consumer grievance redressal.",
+            "Large volumes of structured and unstructured data requiring effective management.",
+            "Demand for enhanced user experience and operational efficiency."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Multilingual and Accessible Design",
+                "functional_specification": "Support for multiple Indian languages, screen-reader compatibility, and compliance with WCAG 2.1 and GIGW 3.0.",
+                "non_functional_constraints": "Must ensure visual clarity, guided form flows, and mobile responsiveness.",
+                "source_filename": "RBI_EOI_CMS2.0.pdf",
+                "section_header": "3.2.1"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Automated Acknowledgements and Alerts",
+                "functional_specification": "Generate instant acknowledgements, reminders, and closure notifications through SMS/email/WhatsApp.",
+                "non_functional_constraints": "Message templates must be configurable and compliant with regulatory standards.",
+                "source_filename": "RBI_EOI_CMS2.0.pdf",
+                "section_header": "3.2.3"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "AI-driven Complaint Registration",
+                "functional_specification": "Incorporate capabilities for auto-extraction of information, AI-based draft generation, and automated identification of missing details.",
+                "non_functional_constraints": "Must support structured complaint formats and assist in compliance.",
+                "source_filename": "RBI_EOI_CMS2.0.pdf",
+                "section_header": "3.2.1"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Configurable Lifecycle Management",
+                "functional_specification": "Support complete complaint lifecycle from registration to closure with configurable workflow rules and SLAs.",
+                "non_functional_constraints": "Must allow for automated routing and prioritization based on predefined rules.",
+                "source_filename": "RBI_EOI_CMS2.0.pdf",
+                "section_header": "3.2.2"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Automated Routing and Escalation",
+                "logic_description": "Enable automated complaint assignment based on complexity, jurisdiction, and predefined rules.",
+                "source_filename": "RBI_EOI_CMS2.0.pdf",
+                "section_header": "3.2.2"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution must ensure secure upload, storage, processing, and retrieval of documents and media files.",
+            "Must comply with the Digital Personal Data Protection Act, 2023."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "Reserve Bank Integrated Ombudsman Scheme, 2021",
+                "integration_purpose": "To manage complaints under the RBIOS framework.",
+                "source_filename": "RBI_EOI_CMS2.0.pdf",
+                "section_header": "3.1"
+            }
+        ],
+        "_source_file": "RBO_CMS_EoICMS09012026_AN.pdf"
+    },
+    {
+        "industry_vertical_context": "The project is for a banking institution focusing on document processing and transaction management.",
+        "high_level_strategic_objective": "To implement a solution that enhances document processing capabilities using advanced technologies like OCR and AI.",
+        "descriptive_pain_points": [
+            "Inefficient document processing leading to delays.",
+            "Inability to accurately extract and classify data from various document formats.",
+            "Challenges in ensuring compliance with regulatory requirements."
+        ],
+        "horizontal_capabilities": [
+            {
+                "category": "Horizontal",
+                "feature_name": "Advanced OCR Engine",
+                "functional_specification": "The solution must have advanced OCR engine with NLP and Neural Networks capabilities for contextual extraction of meta data from structured and unstructured documents.",
+                "non_functional_constraints": "Readily Deployable / Minor Customization Required",
+                "source_filename": "RFP Document",
+                "section_header": "1"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Document Classification and Data Extraction",
+                "functional_specification": "The solution should identify, classify and extract documents and data from trade and other banking related documents on real time basis.",
+                "non_functional_constraints": "Readily Deployable / Minor Customization Required",
+                "source_filename": "RFP Document",
+                "section_header": "2"
+            },
+            {
+                "category": "Horizontal",
+                "feature_name": "Integrated Workflow Approvals",
+                "functional_specification": "The solution should have integrated workflow-based approvals customised to the bank\u2019s requirement.",
+                "non_functional_constraints": "Readily Deployable / Minor Customization Required",
+                "source_filename": "RFP Document",
+                "section_header": "16"
+            }
+        ],
+        "vertical_capabilities": [
+            {
+                "category": "Vertical",
+                "feature_name": "Contextual Understanding of Legal Text",
+                "functional_specification": "The solution should have the capabilities of contextual understanding at clause level for transactions, including Bank Guarantee text, Letters of Credit, etc.",
+                "non_functional_constraints": "Readily Deployable / Minor Customization Required",
+                "source_filename": "RFP Document",
+                "section_header": "6"
+            },
+            {
+                "category": "Vertical",
+                "feature_name": "Document Vetting and Discrepancy Detection",
+                "functional_specification": "The solution should support document text vetting for transactions including inland Bank Guarantees and Foreign Bank Guarantees.",
+                "non_functional_constraints": "Readily Deployable / Minor Customization Required",
+                "source_filename": "RFP Document",
+                "section_header": "7"
+            }
+        ],
+        "business_logic_and_policies": [
+            {
+                "rule_title": "Compliance with Regulatory Guidelines",
+                "logic_description": "The solution should be compliant with the product specific latest guidelines of the regulatory authorities.",
+                "source_filename": "RFP Document",
+                "section_header": "24"
+            }
+        ],
+        "data_architecture_and_security": [
+            "The solution should ensure that the files are encrypted at rest in the repository.",
+            "Data Residency: The platform should be entirely hosted in the country \u2018India\u2019."
+        ],
+        "comprehensive_ecosystem": [
+            {
+                "system_name": "NewgenONE Intelligent Document Processing",
+                "integration_purpose": "To enable intelligent document processing to classify and extract relevant information.",
+                "source_filename": "RFP Document",
+                "section_header": "38"
+            }
+        ],
+        "_source_file": "SBI_IDP_RFE_Requirements sheet_Final.xlsx"
+    }
+]
